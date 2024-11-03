@@ -1,0 +1,4 @@
+let mapleader = " "
+map <Leader>lf <Action>(ShowErrorDescription)
+map <Leader>fm <Action>(ReformatCode)
+map <Leader>h <Action>(ActivateTerminalToolWindow)
