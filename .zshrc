@@ -21,7 +21,6 @@ alias blackbird="$HOME/apps/blackbird/.venv/bin/python $HOME/apps/blackbird/blac
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 eval "$(starship init zsh)"
-starship preset nerd-font-symbols -o ~/.config/starship.toml
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
