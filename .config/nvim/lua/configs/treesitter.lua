@@ -1,5 +1,7 @@
 local opts = {
   ensure_installed = {
+    "gleam",
+    "haskell",
     "jsonc",
     "json",
     "toml",
@@ -12,6 +14,11 @@ local opts = {
     "vimdoc",
     "html",
     "css",
+    "cpp",
+    "c",
+    "rust",
+    "python",
+    "go",
   },
 }
 

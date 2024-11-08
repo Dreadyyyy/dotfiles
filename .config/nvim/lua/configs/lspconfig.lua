@@ -6,6 +6,7 @@ local lspconfig = require "lspconfig"
 local servers = {
   "ts_ls",
   "gdscript",
+  "gleam",
   "html",
   "cssls",
   "clangd",
