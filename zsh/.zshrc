@@ -8,13 +8,12 @@ export ZSH="$HOME/.oh-my-zsh"
 if ! [ ${APPENDED:-false} = true ]; then
   export PATH="$PATH:$HOME/go/bin"
   export PATH="$PATH:/opt/flutter/bin"
+  export APPENDED=true
 fi
 
-alias gdformat="python $HOME/.local/lib/python3.12/site-packages/gdtoolkit/formatter/__main__.py"
-alias integrated="sudo envycontrol -s integrated && sudo reboot"
-alias hybrid="sudo envycontrol -s hybrid && sudo reboot"
-alias nvidia="sudo envycontrol -s nvidia && sudo reboot"
-alias blackbird="$HOME/apps/blackbird/.venv/bin/python $HOME/apps/blackbird/blackbird.py"
+if [[ -r ~/.aliasrc ]]; then
+    . ~/.aliasrc
+fi
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -83,13 +82,14 @@ eval "$(starship init zsh)"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	zsh-autosuggestions
-	git
+	# git
 )
 
-source /home/dreadyyyy/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source $ZSH/oh-my-zsh.sh
+
 
 # User configuration
 
@@ -106,15 +106,3 @@ source $ZSH/oh-my-zsh.sh
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
-
-# Set personal aliases, overriding those provided by Oh My Zsh libs,
-# plugins, and themes. Aliases can be placed here, though Oh My Zsh
-# users are encouraged to define aliases within a top-level file in
-# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
-# - $ZSH_CUSTOM/aliases.zsh
-# - $ZSH_CUSTOM/macos.zsh
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
