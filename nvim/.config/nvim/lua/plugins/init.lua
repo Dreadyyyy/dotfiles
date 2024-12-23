@@ -1,11 +1,35 @@
 return {
   {
+    "mfussenegger/nvim-lint",
+    init = function()
+      require("lint").linters_by_ft = {
+        go = { "golangcilint" },
+        vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+          callback = function()
+            require("lint").try_lint()
+          end,
+        }),
+      }
+    end,
+  },
+  {
+    "karb94/neoscroll.nvim",
+    config = function()
+      require("neoscroll").setup {}
+    end,
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    init = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
+  {
     "stevearc/conform.nvim",
-    event = "BufWritePre", -- uncomment for format on save
+    event = "BufWritePre",
     opts = require "configs.conform",
   },
 
-  -- These are some examples, uncomment them if you want to see them work!
   {
     "neovim/nvim-lspconfig",
     config = function()

@@ -4,10 +4,14 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 
 local servers = {
+  -- "asm_lsp",
+  "dockerls",
   "ts_ls",
   "gdscript",
   "gleam",
+  "hls",
   "html",
+  -- "htmx",
   "cssls",
   "clangd",
   "basedpyright",
@@ -16,6 +20,7 @@ local servers = {
   "jdtls",
   "dartls",
   "bashls",
+  "zls",
 }
 
 local nvlsp = require "nvchad.configs.lspconfig"
@@ -40,4 +45,11 @@ lspconfig.rust_analyzer.setup {
       },
     },
   },
+}
+
+lspconfig.clangd.setup {
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+  cmd = { "clangd", "-header-insertion=never" },
 }

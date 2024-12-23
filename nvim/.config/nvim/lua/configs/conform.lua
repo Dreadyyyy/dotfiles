@@ -8,18 +8,21 @@ local options = {
     rust = { "rustfmt" },
     python = { "black" },
     gdscript = { "gdformat" },
+    -- asm = { "asmfmt" },
   },
 
   formatters = {
     clang_format = {
       prepend_args = { "-style={IndentWidth: 4}" },
     },
+    prettier = {
+      prepend_args = { "--tab-width", "4" },
+    },
   },
 
   notify_on_error = false,
 
   format_on_save = {
-    -- These options will be passed to conform.format()
     timeout_ms = 500,
     lsp_fallback = true,
     quite = true,
