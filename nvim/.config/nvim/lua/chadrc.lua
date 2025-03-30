@@ -8,16 +8,24 @@ local M = {}
 M.base46 = {
   theme = "everforest",
 
-  -- hl_override = {
-  -- 	Comment = { italic = true },
-  -- 	["@comment"] = { italic = true },
-  -- },
+  transparency = true,
+
+  hl_override = {
+    Comment = { italic = true },
+    ["@comment"] = { italic = true },
+  },
 }
 
 M.ui = {
   statusline = {
     theme = "minimal",
   },
+
+  transparency = true,
 }
+
+-- M.mason = {
+--   pkgs = { "clang-format", "black", "golangci-lint", "gdtoolkit" },
+-- }
 
 return M

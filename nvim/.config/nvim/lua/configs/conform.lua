@@ -13,7 +13,8 @@ local options = {
 
   formatters = {
     clang_format = {
-      prepend_args = { "-style={IndentWidth: 4}" },
+      -- prepend_args = { "-style={IndentWidth: 4}" },
+      prepend_args = { "-style={BasedOnStyle: Microsoft}" },
     },
     prettier = {
       prepend_args = { "--tab-width", "4" },
@@ -22,11 +23,11 @@ local options = {
 
   notify_on_error = false,
 
-  format_on_save = {
-    timeout_ms = 500,
-    lsp_fallback = true,
-    quite = true,
-  },
+  -- format_on_save = {
+  --   timeout_ms = 500,
+  --   lsp_fallback = true,
+  --   quite = true,
+  -- },
 }
 
 return options

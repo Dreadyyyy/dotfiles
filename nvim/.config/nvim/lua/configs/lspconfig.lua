@@ -5,9 +5,10 @@ local lspconfig = require "lspconfig"
 
 local servers = {
   -- "asm_lsp",
+  "cmake",
   "dockerls",
   "ts_ls",
-  "gdscript",
+  -- "gdscript",
   "gleam",
   "hls",
   "html",

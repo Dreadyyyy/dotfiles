@@ -4,6 +4,7 @@ return {
     init = function()
       require("lint").linters_by_ft = {
         go = { "golangcilint" },
+        -- cpp = { "cpplint" },
         vim.api.nvim_create_autocmd({ "BufWritePost" }, {
           callback = function()
             require("lint").try_lint()
@@ -26,7 +27,7 @@ return {
   },
   {
     "stevearc/conform.nvim",
-    event = "BufWritePre",
+    -- event = "BufWritePre",
     opts = require "configs.conform",
   },
 
